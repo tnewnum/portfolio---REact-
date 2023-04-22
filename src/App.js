@@ -4,14 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
+
 export default function App() {
   return (
     <>
     <Nav />
     <About />
-    <Projects />    
+    <Projects />
+    <Contact />    
     </>
   );
+}
+
+function scrollIntoView(ref) {
+  if (ref.current) {
+ ref.current.scrollIntoView({ behavior: "smooth" });
+}
 }
 
 function About() {
@@ -63,11 +71,6 @@ function About() {
   )
 };
 
-function scrollIntoView(ref) {
-     if (ref.current) {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  }
-}
 
 function Nav() {
   const aboutRef = useRef(null);
@@ -269,6 +272,160 @@ function Projects () {
     </div>
   </div>
 </section>
+
+  )
+
+}
+
+function Contact () {
+
+  return (
+    <section id="contact" className="row mt-5 p-0 ">
+  <div className="col-lg-5 m-5">
+    <div>
+      <div className="text-center">
+        <h2>
+          <i className="fa-solid fa-at m-3" style={{ color: "#000000" }} />
+          Me
+        </h2>
+      </div>
+      <form
+        action="https://formsubmit.co/9a370d0d7b7478b6c787eb7394bc934e "
+        method="POST"
+        className="border border-2 rounded"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          defaultValue="new email from portfolio"
+        />
+        <input type="hidden" name="_captcha" defaultValue="false" />
+        <input
+          type="hidden"
+          name="_autoresponse"
+          defaultValue="Hello - Thank you for your email. I will reach out as soon as possiable. In the meantime, be sure to check out my gitHub profile @ https://github.com/tnewnum - Have a bless day - Tommy "
+        />
+        <input
+          type="hidden"
+          name="_next"
+          defaultValue="https://tnewnum.github.io/newestPortfolio/thanks.html"
+        />
+        <div className="m-4 input-group">
+          <span className="input-group-text">
+            <i className="fa-solid fa-envelope" style={{ color: "#000000" }} />
+          </span>
+          <input
+            type="email"
+            name="email"
+            className="form-control me-5"
+            id="email"
+            placeholder="name@example.com"
+            required=""
+          />
+        </div>
+        <div className="m-4 input-group">
+          <span className="input-group-text">
+            <i className="fa-solid fa-person" style={{ color: "#000000" }} />
+          </span>
+          <input
+            type="name"
+            className="form-control me-5"
+            id="name"
+            placeholder="Name"
+            required=""
+          />
+        </div>
+        <div className="form-floating m-4">
+          <textarea
+            name="query"
+            id="query"
+            className="form-control"
+            style={{ height: 140 }}
+            defaultValue={""}
+          />
+          <label htmlFor="query">Your Message:</label>
+        </div>
+        <div className="m-4 text-center">
+          <button id="submit-btn" type="submit" className="btn btn-secondary">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div className="col-lg-5 m-5">
+    <div>
+      <div className="text-center">
+        <h2 id="proficiencies">Proficiencies</h2>
+      </div>
+      <div className="row-reverse text-center mt-4">
+        <img
+          className="logos"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png"
+          alt="html"
+        />
+        <img
+          className="css"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
+          alt="CSS"
+        />
+        <img
+          className="js"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/1200px-Javascript_badge.svg.png"
+          alt="javaScript"
+        />
+        <img
+          className="logos"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHhGY3y62pQo2wpjm4i_6cIapSOvVIFShRrnH1a2pukw&s"
+          alt="msSQL"
+        />
+        <img
+          className="logos"
+          src="https://cdn.iconscout.com/icon/free/png-256/mongodb-5-1175140.png"
+          alt="mongodb"
+        />
+        <img
+          className="logos"
+          src="https://buttercms.com/static/images/tech_banners/ExpressJS.png"
+          alt=" ExpressJS"
+        />
+        <img
+          className="logos"
+          src="https://www.metaltoad.com/sites/default/files/styles/large_personal_photo_870x500_/public/reactlogo_4.png?itok=LXFHZrKJ"
+          alt="react"
+        />
+        <img
+          className="logos"
+          src="https://cdn.freebiesupply.com/logos/thumbs/2x/nodejs-1-logo.png"
+          alt="nodejs-1-logo"
+        />
+        <img
+          className="logos"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/JQuery-Logo.svg/2560px-JQuery-Logo.svg.png"
+          alt="jQuery"
+        />
+        <img
+          className="logos"
+          src="./assets/images/bootstrap-logo.png"
+          alt="bootstrap"
+        />
+        <img className="logos" src="./assets/images/vsCode.png" alt="vsCode" />
+        <img
+          className="logos"
+          src="https://faisalweb.com/wp-content/uploads/2017/07/git.jpg"
+          alt="gitBash"
+        />
+        <img
+          className="logos"
+          src="https://seekvectorlogo.net/wp-content/uploads/2018/12/heroku-vector-logo.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+    
 
   )
 
