@@ -396,8 +396,8 @@ function Contact () {
         />
         <img
           className="logos"
-          src="https://cdn.freebiesupply.com/logos/thumbs/2x/nodejs-1-logo.png"
-          alt="nodejs-1-logo"
+          src= {process.env.PUBLIC_URL + "/images/nodejs2.png"}
+          alt="nodejs"
         />
         <img
           className="logos"
@@ -406,10 +406,14 @@ function Contact () {
         />
         <img
           className="logos"
-          src="./assets/images/bootstrap-logo.png"
+          src= {process.env.PUBLIC_URL + "/images/bootstrap-logo.png"}
           alt="bootstrap"
         />
-        <img className="logos" src="./assets/images/vsCode.png" alt="vsCode" />
+        <img 
+          className="logos"
+          src= {process.env.PUBLIC_URL + "/images/vsCode.png"}
+          alt="vsCode"
+        />
         <img
           className="logos"
           src="https://faisalweb.com/wp-content/uploads/2017/07/git.jpg"
