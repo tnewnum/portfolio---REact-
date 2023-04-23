@@ -3,7 +3,7 @@ import { useRef } from 'react';
 export default function Projects () {
     const projectsRef = useRef(null);
     return (
-      <section id="projects" ref={projectsRef} className="bg-dark-subtle mt-5 shadow-lg">
+      <section id="projects" ref={projectsRef} className="bg-dark-subtle mt-5 ">
     <div className="container-lg">
       <div className="text-center">
         <h2>Projects</h2>

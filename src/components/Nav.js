@@ -39,14 +39,9 @@ export default function Nav({page, handlePage}) {
         id="main-nav"
       >
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <a href="/" className="nav-link">
-              <FontAwesomeIcon icon={faHouse}/>
-            </a>
-          </li>
           <li className={page === 'about' ? 'nav-item' : ''}>
             <a href='#about' onClick={e => handlePage(e, 'about')} className='nav-link'>
-              About
+            <FontAwesomeIcon icon={faHouse}/>
             </a>
            </li>
            <li className={page === 'contact' ? 'nav-item' : ''}>
@@ -73,8 +68,8 @@ export default function Nav({page, handlePage}) {
               Projects
             </a>
           </li>
-          <li className="nav-item ms-2 d-none d-md-inline">
-            <a href="#projects" onClick={() => scrollIntoView(projectsRef)}className="btn btn-secondary">
+          <li className= {page === 'projects' ? 'nav-item ms-2 d-none d-md-inline' : '' }>
+            <a href="#projects" onClick={e => handlePage(e, 'projects')} className="btn btn-secondary">
               Projects
             </a>
           </li>
