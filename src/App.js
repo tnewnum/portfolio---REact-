@@ -296,6 +296,7 @@ function Contact () {
   // declare state variables for email and name inputs
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
   // handle email input changes
   const handleEmailChange = (e) => {
@@ -306,10 +307,21 @@ function Contact () {
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+  };
+  
   
     // handle form submission
     const handleSubmit = async (e) => {
       e.preventDefault();
+
+      if (!email || !name || !message) {
+        alert("Please fill in all the fields."); // show error message
+        return;
+      }
+
       try {
         // make POST request using fetch API
         const response = await fetch(
@@ -327,7 +339,7 @@ function Contact () {
         }
       } catch (error) {
         console.error(error);
-        alert("Oops! Something went wrong."); // show error message
+        alert("Oops! Something went wrong  - Please email me at thomas.newnum@gmail.com"); // show error message
       }
     };
 
@@ -391,7 +403,9 @@ function Contact () {
             id="query"
             className="form-control"
             style={{ height: 140 }}
-            defaultValue={""}
+            value={message}
+            onChange={handleMessageChange}
+            required=""
           />
           <label htmlFor="query">Your Message:</label>
         </div>
