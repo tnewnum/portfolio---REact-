@@ -6,6 +6,7 @@ import About from './components/About'
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Proficiencies from "./components/Proficiencies";
 
 export default function App() {
   const [page, setPage] = useState('about') 
@@ -16,7 +17,7 @@ export default function App() {
       case 'about': return <About />
       case 'projects': return <Projects />
       case 'contact': return <Contact />
-      case 'proficiencies': return <Contact />
+      case 'proficiencies': return <Proficiencies />
       default: return <h1>404</h1>
     }
   }
