@@ -2,32 +2,30 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 ## 📘 Description
 
 This application was developed using React to demonstrate my proficiency in front-end web development. With a keen eye for design and a solid understanding of best practices, I am confident that I can deliver high-quality, user-friendly applications that meet the needs of clients and stakeholders. By leveraging my skills and experience, I am poised to make a valuable contribution to any team and drive business success.
 
-## 📑 Table of Contents 
+## 📑 Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Credits](#credits)
 
-## 🛠️ Installation 
+## 🛠️ Installation
 
 This application requires the following dependencies to be installed:
 
-* React 
-* Fontawesome 
-* Bootstrap 
+- React
+- Fontawesome
+- Bootstrap
 
 To install these dependencies, you can use npm by running the following command in your terminal:
 
 ```
-npm i 
+npm i
 ```
-
 
 ## Usage
 
@@ -35,15 +33,13 @@ To use this application, follow these steps:
 
 1. Clone or Fork the repository to your local machine.
 2. Open your terminal and navigate to the root directory of the project.
-3. Run ```npm i``` to install the required dependencies.
-4. Once the installation is complete, run ```npm run start``` to launch the application.
+3. Run `npm i` to install the required dependencies.
+4. Once the installation is complete, run `npm run start` to launch the application.
 5. The application should now be accessible at http://localhost:3000 in your web browser.
-
 
 ## 🔒 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
 
 ## 🤝 Credits
 

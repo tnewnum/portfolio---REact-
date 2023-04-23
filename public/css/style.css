@@ -4,63 +4,60 @@
   max-width: 800px;
 }
 
-section{
-    padding: 50px
+section {
+  padding: 50px;
 }
 
 .img {
-    width: 65%;
+  width: 65%;
 }
 
 .fun {
-    font-family: "Bitter", sans-serif;
-    font-size: larger;
+  font-family: "Bitter", sans-serif;
+  font-size: larger;
 }
 
 /* sticky class added to the header via JS */
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-
-  .first {
-    padding-top: 1em;
+.first {
+  padding-top: 1em;
 }
 
 .sasquatch {
-    width: 5%;
-  } 
+  width: 5%;
+}
 
-  .icon {
-    color: black;
-  }
+.icon {
+  color: black;
+}
 
-  .logos {
-    width: 20%;
-    margin: 2em;
-  }
-  .css {
-    width: 15%;
-    margin: 2em;
-  }
+.logos {
+  width: 20%;
+  margin: 2em;
+}
+.css {
+  width: 15%;
+  margin: 2em;
+}
 
-  .react {
-    
-      width: 20%;
-      margin: 2em;
-    
-  }
+.react {
+  width: 20%;
+  margin: 2em;
+}
 
-  .js {
-    width: 20%;
-    margin: 2em;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+.js {
+  width: 20%;
+  margin: 2em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
 
-  .dancingSas {
-    width: 75%;
-    border-radius: 2em;
-  }
+.dancingSas {
+  width: 75%;
+  border-radius: 2em;
+}
