@@ -13,10 +13,7 @@ function scrollIntoView(ref) {
 
 export default function Nav({page, handlePage}) {
     const projectsRef = useRef(null);
-    const proficienciesRef = useRef(null);
-  
-    
-    
+       
     return (
   <nav
     className="navbar navbar-expand-md bg-dark-subtle shadow-lg"
@@ -30,7 +27,7 @@ export default function Nav({page, handlePage}) {
         className="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#main-nav"
+        data-bs-target='#main-nav'
         aria-controls="main-nav"
         aria-expanded="false"
         aria-label="Toggle navigation"
@@ -63,12 +60,11 @@ export default function Nav({page, handlePage}) {
               target="blank"
               rel="noopener noreferrer"
               className="nav-link"
-            >
-              Resume
+            > Resume
             </a>
           </li>
-          <li className="nav-item">
-            <a href="#proficiencies" onClick={() => scrollIntoView(proficienciesRef)} className="nav-link">
+          <li className={page === 'proficiencies' ? 'nav-item' : ''}>
+            <a href="#proficiencies" onClick={e => handlePage(e, 'proficiencies')} className="nav-link">
               Proficiencies
             </a>
           </li>

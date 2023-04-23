@@ -16,12 +16,14 @@ export default function App() {
       case 'about': return <About />
       case 'projects': return <Projects />
       case 'contact': return <Contact />
+      case 'proficiencies': return <Contact />
       default: return <h1>404</h1>
     }
   }
           
     function handlePage(e, page) {
       e.preventDefault()
+      console.log(page)
       setPage(page)
     }
 
@@ -29,11 +31,7 @@ export default function App() {
     <>
     <Nav handlePage={handlePage} />
       <div>
-        {pickPage()}
-
-
-
-        
+        {pickPage()}        
       </div>
     <Footer />
     </>
