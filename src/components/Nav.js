@@ -51,7 +51,7 @@ export default function Nav({page, handlePage}) {
           </li>
           <li className="nav-item">
             <a
-              href={process.env.PUBLIC_URL + "/docs/resume.pdf"}
+              href={process.env.PUBLIC_URL + "/docs/resume2.pdf"}
               target="blank"
               rel="noopener noreferrer"
               className="nav-link"
