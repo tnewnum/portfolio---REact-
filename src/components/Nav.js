@@ -9,12 +9,13 @@ function scrollIntoView(ref) {
     }
   }
 
-export default function Nav() {
-    const aboutRef = useRef(null);
+
+
+export default function Nav({page, handlePage}) {
     const projectsRef = useRef(null);
-    const contactRef = useRef(null);
     const proficienciesRef = useRef(null);
   
+    
     
     return (
   <nav
@@ -46,13 +47,13 @@ export default function Nav() {
               <FontAwesomeIcon icon={faHouse}/>
             </a>
           </li>
-          <li className="nav-item">
-            <a href='#about' onClick={() => scrollIntoView(aboutRef)} className='nav-link'>
+          <li className={page === 'about' ? 'nav-item' : ''}>
+            <a href='#about' onClick={e => handlePage(e, 'about')} className='nav-link'>
               About
             </a>
            </li>
-          <li className="nav-item">
-            <a href="#contact" onClick={() => scrollIntoView(contactRef)} className="nav-link">
+           <li className={page === 'contact' ? 'nav-item' : ''}>
+            <a href="#contact" onClick={e => handlePage(e, 'contact')} className="nav-link">
               Contact Me
             </a>
           </li>
