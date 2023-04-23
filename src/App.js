@@ -1,8 +1,10 @@
-import { useRef  } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faEnvelope, faPerson, faAt} from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 
 export default function App() {
@@ -11,69 +13,21 @@ export default function App() {
     <Nav />
     <About />
     <Projects />
-    <Contact />    
+    <Contact />
+    <Footer />
     </>
   );
 }
 
 function scrollIntoView(ref) {
   if (ref.current) {
- ref.current.scrollIntoView({ behavior: "smooth" });
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  }
 }
-}
-
-function About() {
-  const aboutRef = useRef(null);
-    return (
-      <div id="about" ref={aboutRef}>
-      <section>
-      <div className="container-lg ">
-        <div className="row justify-content-center align-items-center">
-          <div className="col-md text-center text-md-start">
-            <h1>
-              <div className="display-2">Tommy</div>
-            </h1>
-            <p className=" first lead my4 text-muted ms-2">
-              <span className="fun">F</span>ull <span className="fun">S</span>tack{" "}
-              <span className="fun">W</span>eb <span className="fun">D</span>
-              eveloper - With a Certificate from <span className="fun">M</span>
-              ichigan <span className="fun">S</span>tate{" "}
-              <span className="fun">U</span>niversity.
-            </p>
-            <p className="lead my4 text-muted ms-2">
-              When I'm not coding, you can find me backpacking, camping, hiking, and
-              traveling. I love exploring new places and pushing myself to new
-              limits in the great outdoors.
-            </p>
-            <p className="lead my4 text-muted ms-2">
-              Thank you for checking out my Portfolio. If you're interested in
-              working together, have any questions, or just want to connect - Let's
-              bring our ideas to life and make an impact.
-            </p>
-            <a
-              href="mailto:thomas.newnum@gmail.com"
-              className="btn btn-secondary btn-lrg text-center ms-2m"
-            >
-              Contact Me
-            </a>
-          </div>
-          <div className="col-md-5 text-center m-4">
-            <img
-              className="img-flud img rounded-circle border border-3 border-secondary shadow-lg m-1"
-              src={process.env.PUBLIC_URL + "/images/headshot.jpg"}
-              alt="headshot"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-    </div>
-  )
-};
-
 
 function Nav() {
   const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
   
   return (
 <nav
@@ -147,9 +101,59 @@ function Nav() {
     );
 }
 
+function About() {
+  const aboutRef = useRef(null);
+    return (
+      <div id="about" ref={aboutRef}>
+      <section>
+      <div className="container-lg ">
+        <div className="row justify-content-center align-items-center">
+          <div className="col-md text-center text-md-start">
+            <h1>
+              <div className="display-2">Tommy</div>
+            </h1>
+            <p className=" first lead my4 text-muted ms-2">
+              <span className="fun">F</span>ull <span className="fun">S</span>tack{" "}
+              <span className="fun">W</span>eb <span className="fun">D</span>
+              eveloper - With a Certificate from <span className="fun">M</span>
+              ichigan <span className="fun">S</span>tate{" "}
+              <span className="fun">U</span>niversity.
+            </p>
+            <p className="lead my4 text-muted ms-2">
+              When I'm not coding, you can find me backpacking, camping, hiking, and
+              traveling. I love exploring new places and pushing myself to new
+              limits in the great outdoors.
+            </p>
+            <p className="lead my4 text-muted ms-2">
+              Thank you for checking out my Portfolio. If you're interested in
+              working together, have any questions, or just want to connect - Let's
+              bring our ideas to life and make an impact.
+            </p>
+            <a
+              href="mailto:thomas.newnum@gmail.com"
+              className="btn btn-secondary btn-lrg text-center ms-2m"
+            >
+              Contact Me
+            </a>
+          </div>
+          <div className="col-md-5 text-center m-4">
+            <img
+              className="img-flud img rounded-circle border border-3 border-secondary shadow-lg m-1"
+              src={process.env.PUBLIC_URL + "/images/headshot.jpg"}
+              alt="headshot"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  )
+};
+
 function Projects () {
+  const projectsRef = useRef(null);
   return (
-    <section id="projects" className="bg-dark-subtle mt-5 shadow-lg">
+    <section id="projects" ref={projectsRef} className="bg-dark-subtle mt-5 shadow-lg">
   <div className="container-lg">
     <div className="text-center">
       <h2>Projects</h2>
@@ -277,7 +281,48 @@ function Projects () {
 
 }
 
+
+
+
+
 function Contact () {
+
+  // declare state variables for email and name inputs
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+
+  // handle email input changes
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  // handle name input changes
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+  
+    // handle form submission
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        // make POST request using fetch API
+        const response = await fetch(
+          "https://formsubmit.co/9a370d0d7b7478b6c787eb7394bc934e ",
+          {
+            method: "POST",
+            body: new FormData(e.target),
+          }
+        );
+        if (response.ok) {
+          alert("Thank you for your message!"); // show success message
+        } else {
+          alert("Oops! Something went wrong."); // show error message
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Oops! Something went wrong."); // show error message
+      }
+    };
 
   return (
     <section id="contact" className="row mt-5 p-0 ">
@@ -285,15 +330,14 @@ function Contact () {
     <div>
       <div className="text-center">
         <h2>
-          <i className="fa-solid fa-at m-3" style={{ color: "#000000" }} />
+          <FontAwesomeIcon icon={faAt} style={{ color: "#000000" }} /> 
           Me
         </h2>
       </div>
-      <form
-        action="https://formsubmit.co/9a370d0d7b7478b6c787eb7394bc934e "
-        method="POST"
-        className="border border-2 rounded"
-      >
+        <form
+            onSubmit={handleSubmit} // use onSubmit handler to handle form submission
+            className="border border-2 rounded"
+          >
         <input
           type="hidden"
           name="_subject"
@@ -305,14 +349,9 @@ function Contact () {
           name="_autoresponse"
           defaultValue="Hello - Thank you for your email. I will reach out as soon as possiable. In the meantime, be sure to check out my gitHub profile @ https://github.com/tnewnum - Have a bless day - Tommy "
         />
-        <input
-          type="hidden"
-          name="_next"
-          defaultValue="https://tnewnum.github.io/newestPortfolio/thanks.html"
-        />
         <div className="m-4 input-group">
           <span className="input-group-text">
-            <i className="fa-solid fa-envelope" style={{ color: "#000000" }} />
+            <FontAwesomeIcon icon={faEnvelope} style={{ color: "#000000" }} />  
           </span>
           <input
             type="email"
@@ -320,18 +359,22 @@ function Contact () {
             className="form-control me-5"
             id="email"
             placeholder="name@example.com"
+            value={email} // bind email state variable to input value
+            onChange={handleEmailChange} // use onChange handler to handle email input changes
             required=""
           />
         </div>
         <div className="m-4 input-group">
           <span className="input-group-text">
-            <i className="fa-solid fa-person" style={{ color: "#000000" }} />
+            <FontAwesomeIcon icon={faPerson} style={{ color: "#000000" }} />
           </span>
           <input
             type="name"
             className="form-control me-5"
             id="name"
             placeholder="Name"
+            value={name} // bind name state variable to input value
+            onChange={handleNameChange} // use onChange handler to handle name input changes
             required=""
           />
         </div>
@@ -430,6 +473,36 @@ function Contact () {
 </section>
 
     
+
+  )
+
+}
+
+function Footer () {
+
+  return (
+
+<div className="container">
+  <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top ">
+    <div className="col-md-4 d-flex align-items-center">
+      <span className="mb-3 mb-md-0 text-muted">Tommy Newnum</span>
+      <img className="sasquatch" src= {process.env.PUBLIC_URL + "/images/sasquatch.png"} alt="" />
+    </div>
+    <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li className="m-4">
+        <a href="https://github.com/tnewnum" target="blank">
+        <FontAwesomeIcon icon={faGithub} style={{ color: "#000000", height: "150%"}} />
+        </a>
+      </li>
+      <li className="m-4">
+        <a href="https://www.linkedin.com/in/tnewnum/" target="blank">
+        <FontAwesomeIcon icon={faLinkedin} style={{ color: "#000000", height: "150%"}} />
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+
 
   )
 
