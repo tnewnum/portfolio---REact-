@@ -321,6 +321,7 @@ function Contact () {
         );
         if (response.ok) {
           alert("Thank you for your message!"); // show success message
+          window.location.reload(); // reload the page
         } else {
           alert("Oops! Something went wrong."); // show error message
         }
