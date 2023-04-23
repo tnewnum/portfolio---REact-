@@ -28,6 +28,9 @@ function scrollIntoView(ref) {
 function Nav() {
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+  const proficienciesRef = useRef(null);
+
   
   return (
 <nav
@@ -65,7 +68,7 @@ function Nav() {
           </a>
          </li>
         <li className="nav-item">
-          <a href="#contact" className="nav-link">
+          <a href="#contact" onClick={() => scrollIntoView(contactRef)} className="nav-link">
             Contact Me
           </a>
         </li>
@@ -80,17 +83,17 @@ function Nav() {
           </a>
         </li>
         <li className="nav-item">
-          <a href="#proficiencies" className="nav-link">
+          <a href="#proficiencies" onClick={() => scrollIntoView(proficienciesRef)} className="nav-link">
             Proficiencies
           </a>
         </li>
         <li className="nav-item d-md-none">
-          <a href="#projects" className="nav-link">
+          <a href="#projects"onClick={() => scrollIntoView(projectsRef)} className="nav-link">
             Projects
           </a>
         </li>
         <li className="nav-item ms-2 d-none d-md-inline">
-          <a href="#projects" className="btn btn-secondary">
+          <a href="#projects" onClick={() => scrollIntoView(projectsRef)}className="btn btn-secondary">
             Projects
           </a>
         </li>
@@ -286,6 +289,9 @@ function Projects () {
 
 
 function Contact () {
+  const contactRef = useRef(null);
+  const proficienciesRef = useRef (null);
+
 
   // declare state variables for email and name inputs
   const [email, setEmail] = useState("");
@@ -325,7 +331,7 @@ function Contact () {
     };
 
   return (
-    <section id="contact" className="row mt-5 p-0 ">
+    <section id="contact" ref={contactRef} className="row mt-5 p-0 ">
   <div className="col-lg-5 m-5">
     <div>
       <div className="text-center">
@@ -399,7 +405,7 @@ function Contact () {
   <div className="col-lg-5 m-5">
     <div>
       <div className="text-center">
-        <h2 id="proficiencies">Proficiencies</h2>
+        <h2 id="proficiencies" ref={proficienciesRef}>Proficiencies</h2>
       </div>
       <div className="row-reverse text-center mt-4">
         <img
