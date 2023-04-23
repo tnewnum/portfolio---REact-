@@ -6,8 +6,8 @@ export default function Proficiencies () {
   
 
     return (
-        <section id="proficiencies" ref={proficienciesRef} className="row mt-5 p-0 ">
-          <div className="col-lg-5 m-5">
+        <section id="proficiencies" ref={proficienciesRef} className="d-flex justify-content-center row mt-5 p-0 ">
+          <div className="col-lg-8 m-5">
           <div>
             <div className="text-center">
               <h2>Proficiencies</h2>

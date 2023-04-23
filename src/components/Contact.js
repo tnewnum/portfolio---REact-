@@ -57,7 +57,7 @@ export default function Contact () {
       };
   
     return (
-      <section id="contact" ref={contactRef} className="row mt-5 p-0 ">
+      <section id="contact" ref={contactRef} className=" d-flex justify-content-center row mt-5 p-0 ">
     <div className="col-lg-5 m-5">
       <div>
         <div className="text-center">
