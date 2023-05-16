@@ -84,29 +84,21 @@ export default function Projects() {
         <div className="col-8 col-md-6 col-lg-4 col-xl-3 m-2">
           <div className="card border-0">
             <img
-              src={process.env.PUBLIC_URL + "/images/entertianmentWishlist.png"}
+              src={process.env.PUBLIC_URL + "/images/caddyShack.png"}
               className="card-img-top test"
               alt="screenshot"
             />
             <div className="card-body text-center py-4">
-              <h4 className="card-title">Entertainment Wishlist</h4>
+              <h4 className="card-title">Caddy Shack</h4>
               <h6 className="card-subtitle mb-2 text-muted">Group Project</h6>
               <p className="card-text mx-5 text-muted d-none d-sm-block">
-                JavaScript code that fetches data from two different APIs and
-                displays them on the webpage useing Tailwinds CSS Framework.
+                A MERN Full Stack Web Application
               </p>
             </div>
             <div className="card-body text-center">
+            
               <a
-                href="https://drive.google.com/file/d/1cfyp-k1b6Vm6cJttD2dgkbQKQE7zzl4x/view?usp=share_link"
-                className="card-link m-2"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Demostration
-              </a>
-              <a
-                href="https://github.com/tnewnum/Wishlist"
+                href="https://github.com/tnewnum/caddy_shack"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card-link ms-0 m-2"
@@ -114,7 +106,7 @@ export default function Projects() {
                 gitHub Repo
               </a>
               <a
-                href="https://tnewnum.github.io/Wishlist/"
+                href="https://dry-anchorage-61029.herokuapp.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card-link ms-0"
